@@ -22,11 +22,11 @@ Initial equipmemt list will be as follows:
 
 The project flow will be as follows:
 
-1. Drone is assesmbled
-2. Drone can be controlled directly with Turnigy X9
-3. Drone can self balance with Udoo / Razor AHRS
-4. Drone can see and hear
-5. Drone can communicate with laptop
-6. Drone can learn from source material
-7. Drone can distinguish people
-8. Drone can distinguish voices
+- [ ] Drone is assesmbled
+- [ ] Drone can be controlled directly with Turnigy X9
+- [ ] Drone can self balance with Udoo / Razor AHRS
+- [ ] Drone can see and hear
+- [ ] Drone can communicate with laptop
+- [ ] Drone can learn from source material
+- [ ] Drone can distinguish people
+- [ ] Drone can distinguish voices
