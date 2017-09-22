@@ -25,8 +25,10 @@ The project flow will be as follows:
 - [ ] Drone is assesmbled
 - [ ] Drone can be controlled directly with Turnigy X9
 - [ ] Drone can self balance with Udoo / Razor AHRS
-- [ ] Drone can see and hear
 - [ ] Drone can communicate with laptop
+- [ ] Drone can accept text commands
+- [ ] Drone can accept / respond to text input (chatbot)
+- [ ] Drone can see and hear (Image recognition, Audio recognition)
 - [ ] Drone can learn from source material
 - [ ] Drone can distinguish people
 - [ ] Drone can distinguish voices
