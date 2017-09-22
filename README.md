@@ -13,6 +13,8 @@ Initial equipmemt list will be as follows:
 
 * Turnigy X9 9-channel control
 
+* Scanse Sweep
+
 * razor 9dof
 
 * 6-rotor copter kit
