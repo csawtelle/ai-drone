@@ -24,8 +24,8 @@ Initial equipmemt list will be as follows:
 
 The project flow will be as follows:
 
-- [ ] Drone is assesmbled
-- [ ] Drone can be controlled directly with Turnigy X9
+- [x] Drone is assesmbled
+- [x] Drone can be controlled directly with Turnigy X9
 - [ ] Drone can self balance with Udoo / Razor AHRS
 - [ ] Drone can communicate with laptop
 - [ ] Drone can accept text commands
