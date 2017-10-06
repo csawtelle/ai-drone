@@ -21,7 +21,7 @@ Initial equipmemt list will be as follows:
 
 * 8-rotor drone from scratch  (Final goal)
 ![Rotor Setup](https://user-images.githubusercontent.com/12061655/31257565-19bca576-a9ee-11e7-8e64-d0e4d13e2339.png)
-
+http://autoquad.org/wiki/wiki/configuring-autoquad-flightcontroller/frame-motor-mixing-table/
 
 
 The project flow will be as follows:
