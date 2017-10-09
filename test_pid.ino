@@ -1,3 +1,6 @@
+/* This can be improved by putting it on an interrupt routine */
+
+
 unsigned long lastTime;
 float Input, Output, Setpoint;
 float errSum, lastErr;
