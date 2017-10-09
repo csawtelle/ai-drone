@@ -11,7 +11,7 @@ Initial equipmemt list will be as follows:
 
 * Artificial Intellgence Brain - Jetson TX2 Development kit
 
-* Eyes (Color, Pattern) - Jetson TX2 Development kit Camera
+* Eyes (Color, Pattern) - Jetson TX2 Development kit CSI Camera
 
 * Eyes (Depth, Distance) - Scanse Sweep
 
