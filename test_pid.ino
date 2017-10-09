@@ -5,7 +5,7 @@ float kp, ki, kd;
 
 void Compute() {
    unsigned long now = millis();
-   float timeChange = (double)(now - lastTime);
+   float timeChange = (float)(now - lastTime);
    float error = Setpoint - Input;
    errSum += (error * timeChange);
    float dErr = (error - lastErr) / timeChange;
