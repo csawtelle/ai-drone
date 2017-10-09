@@ -11,6 +11,8 @@ Initial equipmemt list will be as follows:
 
 * Artificial Intellgence Brain - Jetson TX2 Development kit
 
+* CSI Camera - Jetson TX2 Development kit Camera
+
 * Eyes - Scanse Sweep
 
 * Inner Ear? - Adafruit 10-Dof
