@@ -23,9 +23,6 @@ Initial equipmemt list will be as follows:
 
 * Final Body - 8-rotor drone from scratch  (Final goal)
 
-![Rotor Setup](https://user-images.githubusercontent.com/12061655/31257565-19bca576-a9ee-11e7-8e64-d0e4d13e2339.png)
-http://autoquad.org/wiki/wiki/configuring-autoquad-flightcontroller/frame-motor-mixing-table/
-
 The project flow will be as follows:
 
 - [x] Drone is assesmbled
@@ -38,3 +35,22 @@ The project flow will be as follows:
 - [ ] Drone can learn from source material
 - [ ] Drone can distinguish people
 - [ ] Drone can distinguish voices
+
+
+
+# Testing RX/TX
+
+### RX Unit
+https://user-images.githubusercontent.com/12061655/31365119-10c2d5de-ad1e-11e7-895c-21ea2a86d735.png
+
+### Configuring the TX
+I used the following motor mix for the hexacopter
+![Rotor Setup](https://user-images.githubusercontent.com/12061655/31257565-19bca576-a9ee-11e7-8e64-d0e4d13e2339.png)
+http://autoquad.org/wiki/wiki/configuring-autoquad-flightcontroller/frame-motor-mixing-table/
+
+### Hooking it up to Arduino
+Load https://github.com/csawtelle/ai-drone/blob/master/test_tx_read.ino to the Arduino
+https://user-images.githubusercontent.com/12061655/31365089-ef51ac7c-ad1d-11e7-98b9-eaa387b6aef2.png
+
+### Open Serial Monitor
+You should see ~1300 when the throttle is down and ~2100 when the throttle is max 
