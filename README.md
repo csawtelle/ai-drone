@@ -41,7 +41,7 @@ The project flow will be as follows:
 # Testing RX/TX
 
 ### RX Unit
-https://user-images.githubusercontent.com/12061655/31365119-10c2d5de-ad1e-11e7-895c-21ea2a86d735.png
+![RX Unit](https://user-images.githubusercontent.com/12061655/31365119-10c2d5de-ad1e-11e7-895c-21ea2a86d735.png)
 
 ### Configuring the TX
 I used the following motor mix for the hexacopter
@@ -50,7 +50,8 @@ http://autoquad.org/wiki/wiki/configuring-autoquad-flightcontroller/frame-motor-
 
 ### Hooking it up to Arduino
 Load https://github.com/csawtelle/ai-drone/blob/master/test_tx_read.ino to the Arduino
-https://user-images.githubusercontent.com/12061655/31365089-ef51ac7c-ad1d-11e7-98b9-eaa387b6aef2.png
+
+![RX Hookup](https://user-images.githubusercontent.com/12061655/31365089-ef51ac7c-ad1d-11e7-98b9-eaa387b6aef2.png)
 
 ### Open Serial Monitor
 You should see ~1300 when the throttle is down and ~2100 when the throttle is max 
