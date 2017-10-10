@@ -27,6 +27,7 @@ The project flow will be as follows:
 
 - [x] Drone is assesmbled
 - [x] Drone can be controlled directly with Turnigy X9
+![image](https://user-images.githubusercontent.com/12061655/31402290-6ce9e514-adaa-11e7-88c7-df3bcc640ac1.png)
 - [ ] Drone can self balance with Udoo / 10DoF
 - [ ] Drone can communicate with laptop
 - [ ] Drone can accept text commands
