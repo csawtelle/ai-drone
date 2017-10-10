@@ -15,7 +15,9 @@ Initial equipmemt list will be as follows:
 
 * Eyes (Depth, Distance) - Scanse Sweep
 
-* Inner Ear? - Adafruit 10-Dof
+* Ears - ReSpeaker Mic Array 
+
+* Vestibular System - Adafruit 10-Dof
 
 * Test Body - S550 Kit
 
