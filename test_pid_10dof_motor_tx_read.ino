@@ -36,16 +36,23 @@ PID yaw;
 PID pitch;
 PID roll;
 
+int throttle1;
+int throttle2;
+int throttle3;
+int throttle4;
+int throttle5;
+int throttle6;
+int reducer=6;
+
 void initRotor() {
   for(int i=0; i < 6; i++) {
     pwm.setPWM(i, 0, UPPERRBOUND);
-    delay(2);
+    delay(100);
     pwm.setPWM(i, 0, LOWERBOUND);
-    delay(2);
+    delay(100);
     pwm.setPWM(i, 0, UPPERRBOUND);
-    delay(2);
+    delay(100);
     pwm.setPWM(i, 0, LOWERBOUND);
-    delay(2);
   }
 };
 
@@ -68,12 +75,12 @@ void updateRotor(PID &r, PID &p, PID &y) {
   int ppw = p.pulseWidth;
   int ypw = y.pulseWidth;
   
-  int one = 1*ppw+ LOWERBOUND;// + .5*rpw + -1*ypw + LOWERBOUND;
-  int two = 1*ppw+ LOWERBOUND;// + -.5*rpw + 1*ypw + LOWERBOUND;
-  int three = 0*ppw+ LOWERBOUND;// + -1*rpw + -1*ypw + LOWERBOUND;
-  int four = -1*ppw+ LOWERBOUND;// + -.5*rpw + 1*ypw + LOWERBOUND;
-  int five = -1*ppw+ LOWERBOUND;// + .5*rpw + -1*ypw + LOWERBOUND;
-  int six = 0*ppw+ LOWERBOUND;// + .5*rpw + 1*ypw + LOWERBOUND;
+  int one = 1*ppw + .5*rpw + -1*ypw + throttle1/reducer;//
+  int two = 1*ppw + -.5*rpw + 1*ypw + throttle2/reducer;//
+  int three = 0*ppw + -1*rpw + -1*ypw + throttle3/reducer;//
+  int four = -1*ppw + -.5*rpw + 1*ypw + throttle4/reducer;//
+  int five = -1*ppw + .5*rpw + -1*ypw + throttle5/reducer;//
+  int six = 0*ppw + .5*rpw + 1*ypw + throttle6/reducer;//
   Serial.print(one);
   Serial.print(" ");
   Serial.print(two);
@@ -85,37 +92,13 @@ void updateRotor(PID &r, PID &p, PID &y) {
   Serial.print(five);
   Serial.print(" ");
   Serial.println(six);
-  if (one < LOWERBOUND){
-    pwm.setPWM(0, 0, LOWERBOUND);
-  } else {
-    pwm.setPWM(0, 0, one);
-  };
-  if (two < LOWERBOUND){
-    pwm.setPWM(1, 0, LOWERBOUND);
-  } else {
-    pwm.setPWM(1, 0, two);
-  };
-  if (three < LOWERBOUND){
-    pwm.setPWM(2, 0, LOWERBOUND);
-  } else {
-    pwm.setPWM(2, 0, three);
-  };
-  if (four < LOWERBOUND){
-    pwm.setPWM(3, 0, LOWERBOUND);
-  } else {
-    pwm.setPWM(3, 0, four);
-  };
-  if (five < LOWERBOUND){
-    pwm.setPWM(4, 0, LOWERBOUND);
-  } else {
-    pwm.setPWM(4, 0, five);
-  };
-  if (six < LOWERBOUND){
-    pwm.setPWM(5, 0, LOWERBOUND);
-  } else {
-    pwm.setPWM(5, 0, six);
-  };
-};
+  pwm.setPWM(0, 0, one);
+  pwm.setPWM(1, 0, two);
+  pwm.setPWM(2, 0, three);
+  pwm.setPWM(3, 0, four);
+  pwm.setPWM(4, 0, five);
+  pwm.setPWM(5, 0, six);
+}
 
 float compute(PID &p, int input) {
    unsigned long now = millis();
@@ -128,19 +111,6 @@ float compute(PID &p, int input) {
    p.lastTime = now;
 };
 
-void plot(int Data1, int Data2, int Data3, int Data4=0, int Data5=0, int Data6=0, int Data7=0, int Data8=0){
-  Serial.print(Data1); 
-  Serial.print(" ");
-  Serial.print(Data2); 
-  Serial.print(" ");
-  Serial.print(Data3); 
-  Serial.print(" ");
-  Serial.print(Data4); 
-  Serial.print(" ");
-  Serial.print(Data5); 
-  Serial.print(" ");
-  Serial.println(Data6); 
-}
 void setup(){
   Serial.begin(115200);
   accel.begin();
@@ -171,13 +141,11 @@ void loop(){
     updateRotor(roll, pitch, yaw);
   };
   if(flag=getChannelsReceiveInfo()) {
-    plot(
-      RC_Channel_Value[0],
-      RC_Channel_Value[1],
-      RC_Channel_Value[2],
-      RC_Channel_Value[3],
-      RC_Channel_Value[4],
-      RC_Channel_Value[5]
-    );
+    throttle1 = RC_Channel_Value[0];
+    throttle2 = RC_Channel_Value[1];
+    throttle3 = RC_Channel_Value[2];
+    throttle4 = RC_Channel_Value[3];
+    throttle5 = RC_Channel_Value[4];
+    throttle6 = RC_Channel_Value[5];
   }
 }
