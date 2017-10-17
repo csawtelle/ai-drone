@@ -42,7 +42,7 @@ int throttle3;
 int throttle4;
 int throttle5;
 int throttle6;
-int reducer=6;
+int reducer=.15;
 
 void initRotor() {
   for(int i=0; i < 6; i++) {
@@ -75,12 +75,13 @@ void updateRotor(PID &r, PID &p, PID &y) {
   int ppw = p.pulseWidth;
   int ypw = y.pulseWidth;
   
-  int one = 1*ppw + .5*rpw + -1*ypw + throttle1/reducer;//
-  int two = 1*ppw + -.5*rpw + 1*ypw + throttle2/reducer;//
-  int three = 0*ppw + -1*rpw + -1*ypw + throttle3/reducer;//
-  int four = -1*ppw + -.5*rpw + 1*ypw + throttle4/reducer;//
-  int five = -1*ppw + .5*rpw + -1*ypw + throttle5/reducer;//
-  int six = 0*ppw + .5*rpw + 1*ypw + throttle6/reducer;//
+  int one = (1*ppw + .5*rpw + -1*ypw) + (throttle1 * reducer);
+  int two = (1*ppw + -.5*rpw + 1*ypw) + (throttle2 * reduce)r;
+  int three = (0*ppw + -1*rpw + -1*ypw) + (throttle3 * reducer);
+  int four = (-1*ppw + -.5*rpw + 1*ypw) + (throttle4 * reducer);
+  int five = (-1*ppw + .5*rpw + -1*ypw) + (throttle5 * reducer);
+  int six = (0*ppw + .5*rpw + 1*ypw) + (throttle6 * reducer);
+  
   Serial.print(one);
   Serial.print(" ");
   Serial.print(two);
@@ -92,6 +93,7 @@ void updateRotor(PID &r, PID &p, PID &y) {
   Serial.print(five);
   Serial.print(" ");
   Serial.println(six);
+  
   pwm.setPWM(0, 0, one);
   pwm.setPWM(1, 0, two);
   pwm.setPWM(2, 0, three);
