@@ -42,7 +42,7 @@ int throttle3;
 int throttle4;
 int throttle5;
 int throttle6;
-int reducer=.15;
+float reducer=.2;
 
 void initRotor() {
   for(int i=0; i < 6; i++) {
@@ -76,7 +76,7 @@ void updateRotor(PID &r, PID &p, PID &y) {
   int ypw = y.pulseWidth;
   
   int one = (1*ppw + .5*rpw + -1*ypw) + (throttle1 * reducer);
-  int two = (1*ppw + -.5*rpw + 1*ypw) + (throttle2 * reduce)r;
+  int two = (1*ppw + -.5*rpw + 1*ypw) + (throttle2 * reducer);
   int three = (0*ppw + -1*rpw + -1*ypw) + (throttle3 * reducer);
   int four = (-1*ppw + -.5*rpw + 1*ypw) + (throttle4 * reducer);
   int five = (-1*ppw + .5*rpw + -1*ypw) + (throttle5 * reducer);
